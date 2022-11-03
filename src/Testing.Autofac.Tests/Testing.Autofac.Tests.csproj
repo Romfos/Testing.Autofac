@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Autofac.Testing.NSubstitute\Autofac.Testing.NSubstitute.csproj" />
     <ProjectReference Include="..\Testing.Autofac.NSubstitute\Testing.Autofac.NSubstitute.csproj" />
   </ItemGroup>
 
