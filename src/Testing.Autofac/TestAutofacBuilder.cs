@@ -20,7 +20,7 @@ public sealed class TestAutofacBuilder
         return this;
     }
 
-    public T Build<T>()
+    public T Resolve<T>()
         where T : notnull
     {
         var container = ContainerBuilder.Build();
