@@ -23,7 +23,7 @@ public void ExampleTest()
     new TestAutofacBuilder()
         .Module<TestModule>()
         .Mock(out IBar bar)
-        .Resolve(out var IFoo);
+        .Resolve(out IFoo underTest);
 
     bar.Value().Returns(2);
 
