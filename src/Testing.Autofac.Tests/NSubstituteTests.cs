@@ -43,13 +43,32 @@ public sealed class NSubstituteTests
 
 
     [TestMethod]
-    public void NSubstituteTest()
+    public void BuildTest()
     {
         // arrange
-        var underTest = new TestAutofacService()
+        var underTest = new TestAutofacBuilder()
             .Module<TestModule>()
             .Mock<IBar>(out var bar)
             .Build<IFoo>();
+
+        bar.Value().Returns(2);
+
+        // act
+        var actual = underTest.Add(1);
+
+        // assert
+        Assert.AreEqual(3, actual);
+    }
+
+    [TestMethod]
+    public void FactoryResolveTest()
+    {
+        // arrange
+        new TestAutofacBuilder()
+            .Module<TestModule>()
+            .Mock(out IBar bar)
+            .Build()
+            .Resolve(out IFoo underTest);
 
         bar.Value().Returns(2);
 

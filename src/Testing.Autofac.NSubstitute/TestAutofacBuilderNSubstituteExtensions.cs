@@ -4,9 +4,9 @@ using System;
 
 namespace Testing.Autofac.NSubstitute;
 
-public static class TestAutofacServiceNSubstituteExtensions
+public static class TestAutofacBuilderNSubstituteExtensions
 {
-    public static TestAutofacService Mock<T>(this TestAutofacService testAutofacService, out T target)
+    public static TestAutofacBuilder Mock<T>(this TestAutofacBuilder testAutofacService, out T target)
         where T : class
     {
         target = Substitute.For<T>();
@@ -14,7 +14,7 @@ public static class TestAutofacServiceNSubstituteExtensions
         return testAutofacService;
     }
 
-    public static TestAutofacService Mock<T>(this TestAutofacService testAutofacService, out T target, Action<T> configure)
+    public static TestAutofacBuilder Mock<T>(this TestAutofacBuilder testAutofacService, out T target, Action<T> configure)
         where T : class
     {
         target = Substitute.For<T>();
