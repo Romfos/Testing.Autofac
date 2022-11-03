@@ -8,10 +8,10 @@ https://www.nuget.org/packages/Testing.Autofac.NSubstitute/
 
 # Usage
 
-1. Create TestAutofacService
+1. Create TestContainerBuilder
 2. Register autofac modules
 3. Register mocks (+ configure them)
-4. Build target service
+4. Build test services
 
 # Usage example
 
