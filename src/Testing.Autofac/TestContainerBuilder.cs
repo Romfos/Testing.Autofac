@@ -2,18 +2,18 @@ using Autofac;
 
 namespace Testing.Autofac;
 
-public sealed class TestAutofacBuilder
+public sealed class TestContainerBuilder
 {
     internal ContainerBuilder ContainerBuilder { get; } = new ContainerBuilder();
 
-    public TestAutofacBuilder Module<T>()
+    public TestContainerBuilder Module<T>()
         where T : Module, new()
     {
         ContainerBuilder.RegisterModule<T>();
         return this;
     }
 
-    public TestAutofacBuilder Register<T>(T target)
+    public TestContainerBuilder Register<T>(T target)
         where T : class
     {
         ContainerBuilder.RegisterInstance(target).SingleInstance();
@@ -28,16 +28,16 @@ public sealed class TestAutofacBuilder
         return scope.Resolve<T>();
     }
 
-    public void Resolve<T>(out T value)
+    public void Resolve<T>(out T target)
         where T : notnull
     {
-        value = Resolve<T>();
+        target = Resolve<T>();
     }
 
-    public TestAutofacFactroy Build()
+    public TestContainerScope Build()
     {
         var container = ContainerBuilder.Build();
         var scope = container.BeginLifetimeScope();
-        return new TestAutofacFactroy(scope);
+        return new TestContainerScope(scope);
     }
 }

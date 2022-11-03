@@ -46,7 +46,7 @@ public sealed class NSubstituteTests
     public void BuildTest()
     {
         // arrange
-        new TestAutofacBuilder()
+        new TestContainerBuilder()
             .Module<TestModule>()
             .Mock(out IBar bar)
             .Resolve<IFoo>(out var underTest);
@@ -64,7 +64,7 @@ public sealed class NSubstituteTests
     public void FactoryResolveTest()
     {
         // arrange
-        new TestAutofacBuilder()
+        new TestContainerBuilder()
             .Module<TestModule>()
             .Mock(out IBar bar)
             .Build()
