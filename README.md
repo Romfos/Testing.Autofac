@@ -1,4 +1,4 @@
-# Autofac.Testing
+# Testing.Autofac
 
 Small testing library for autofac modules
 
