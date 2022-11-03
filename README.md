@@ -22,7 +22,7 @@ public void ExampleTest()
     // arrange
     var underTest = new TestAutofacService()
         .Module<TestModule>()
-        .Mock<IBar>(out var bar)
+        .Mock(out IBar bar)
         .Build<IFoo>();
 
     bar.Value().Returns(2);
