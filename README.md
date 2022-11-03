@@ -20,7 +20,7 @@ https://www.nuget.org/packages/Testing.Autofac.NSubstitute/
 public void ExampleTest()
 {
     // arrange
-    var underTest = new TestAutofacService()
+    var underTest = new TestAutofacBuilder()
         .Module<TestModule>()
         .Mock(out IBar bar)
         .Resolve<IFoo>();
