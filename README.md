@@ -2,6 +2,10 @@
 
 Small testing library for autofac modules
 
+# Nuget
+
+https://www.nuget.org/packages/Testing.Autofac.NSubstitute/
+
 # Usage
 
 1. Create TestAutofacService
