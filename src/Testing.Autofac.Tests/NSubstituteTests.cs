@@ -48,7 +48,7 @@ public sealed class NSubstituteTests
         // arrange
         var underTest = new TestAutofacBuilder()
             .Module<TestModule>()
-            .Mock<IBar>(out var bar)
+            .Mock(out IBar bar)
             .Build<IFoo>();
 
         bar.Value().Returns(2);
