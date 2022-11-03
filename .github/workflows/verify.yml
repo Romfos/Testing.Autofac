@@ -1,0 +1,22 @@
+on: push
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Build
+        run: dotnet build ./src/Testing.Autofac.sln
+
+      - name: Test
+        run: dotnet test --no-build --no-restore ./src/Testing.Autofac.sln
+
+      - name: Format
+        run: dotnet format --verify-no-changes --no-restore ./src/Testing.Autofac.sln
