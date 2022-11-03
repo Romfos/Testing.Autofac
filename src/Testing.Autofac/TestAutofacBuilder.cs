@@ -28,6 +28,12 @@ public sealed class TestAutofacBuilder
         return scope.Resolve<T>();
     }
 
+    public void Resolve<T>(out T value)
+        where T : notnull
+    {
+        value = Resolve<T>();
+    }
+
     public TestAutofacFactroy Build()
     {
         var container = ContainerBuilder.Build();

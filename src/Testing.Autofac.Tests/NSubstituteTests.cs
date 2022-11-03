@@ -46,10 +46,10 @@ public sealed class NSubstituteTests
     public void BuildTest()
     {
         // arrange
-        var underTest = new TestAutofacBuilder()
+        new TestAutofacBuilder()
             .Module<TestModule>()
             .Mock(out IBar bar)
-            .Resolve<IFoo>();
+            .Resolve<IFoo>(out IFoo underTest);
 
         bar.Value().Returns(2);
 
