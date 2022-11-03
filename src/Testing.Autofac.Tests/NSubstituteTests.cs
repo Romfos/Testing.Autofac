@@ -49,7 +49,7 @@ public sealed class NSubstituteTests
         new TestAutofacBuilder()
             .Module<TestModule>()
             .Mock(out IBar bar)
-            .Resolve<IFoo>(out IFoo underTest);
+            .Resolve<IFoo>(out var underTest);
 
         bar.Value().Returns(2);
 
