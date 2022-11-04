@@ -13,6 +13,12 @@ public sealed class TestContainerBuilder
         return this;
     }
 
+    public TestContainerBuilder Module(Module module)
+    {
+        ContainerBuilder.RegisterModule(module);
+        return this;
+    }
+
     public TestContainerBuilder Register<T>(T target)
         where T : class
     {
