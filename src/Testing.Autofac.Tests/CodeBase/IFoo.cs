@@ -1,4 +1,4 @@
-﻿namespace Testing.Autofac.Tests.CodeBase;
+namespace Testing.Autofac.Tests.CodeBase;
 
 public interface IFoo
 {
