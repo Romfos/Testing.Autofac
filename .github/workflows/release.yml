@@ -5,7 +5,7 @@ on:
         description: "Nuget package version"
         required: true
         type: string
-        default: "0.1.0-preview"
+        default: "1.0.0"
 
 jobs:
   release:
