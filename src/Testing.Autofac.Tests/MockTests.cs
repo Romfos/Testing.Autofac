@@ -1,12 +1,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NSubstitute;
-using Testing.Autofac.NSubstitute;
+using Moq;
+using Testing.Autofac.Moq;
 using Testing.Autofac.Tests.CodeBase;
 
 namespace Testing.Autofac.Tests;
 
 [TestClass]
-public sealed class NSubstituteTests
+public sealed class MockTests
 {
     [TestMethod]
     public void BuildTest()
@@ -14,10 +14,10 @@ public sealed class NSubstituteTests
         // arrange
         new TestContainerBuilder()
             .Module<TestModule>()
-            .Mock(out IBar bar)
+            .Mock(out Mock<IBar> bar)
             .Resolve<IFoo>(out var underTest);
 
-        bar.Value().Returns(2);
+        bar.Setup(x => x.Value()).Returns(2);
 
         // act
         var actual = underTest.Add(1);
@@ -32,7 +32,7 @@ public sealed class NSubstituteTests
         // arrange
         new TestContainerBuilder()
             .Module(new TestModule())
-            .Mock<IBar>(x => x.Value().Returns(2))
+            .Mock<IBar>(x => x.Setup(x => x.Value()).Returns(2))
             .Build()
             .Resolve(out IFoo underTest);
 
