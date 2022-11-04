@@ -24,7 +24,14 @@ public static class TestContainerBuilderNSubstituteExtensions
     public static TestContainerBuilder Mock<T>(this TestContainerBuilder testContainerBuilder, params Action<T>[] configures)
         where T : class
     {
-        var substitute = Substitute.For<T>();
+        Mock(testContainerBuilder, out _, configures);
+        return testContainerBuilder;
+    }
+
+    public static TestContainerBuilder Mock<T>(this TestContainerBuilder testContainerBuilder, out T substitute, params Action<T>[] configures)
+        where T : class
+    {
+        substitute = Substitute.For<T>();
         foreach (var configure in configures)
         {
             configure(substitute);

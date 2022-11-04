@@ -24,7 +24,14 @@ public static class TestContainerBuilderMoqExtensions
     public static TestContainerBuilder Mock<T>(this TestContainerBuilder testContainerBuilder, params Action<Mock<T>>[] configures)
         where T : class
     {
-        var mock = new Mock<T>();
+        Mock(testContainerBuilder, out _, configures);
+        return testContainerBuilder;
+    }
+
+    public static TestContainerBuilder Mock<T>(this TestContainerBuilder testContainerBuilder, out Mock<T> mock, params Action<Mock<T>>[] configures)
+        where T : class
+    {
+        mock = new Mock<T>();
         foreach (var configure in configures)
         {
             configure(mock);
