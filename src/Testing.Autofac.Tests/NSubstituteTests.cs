@@ -32,11 +32,11 @@ public sealed class NSubstituteTests
         // arrange
         new TestContainerBuilder()
             .Module(new TestModule())
-            .Mock(out IBar bar)
+            .Mock<IBar>(
+                x => x.Value().Returns(2),
+                x => x.Value().Returns(2))
             .Build()
             .Resolve(out IFoo underTest);
-
-        bar.Value().Returns(2);
 
         // act
         var actual = underTest.Add(1);
