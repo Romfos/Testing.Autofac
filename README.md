@@ -17,7 +17,7 @@ https://www.nuget.org/packages/Testing.Autofac.Moq/
 3. Register mocks (NSubstitute or Moq)
 4. Build test services
 
-# Usage example
+# Usage example (NSubstitute)
 
 ```csharp
 [TestMethod]
