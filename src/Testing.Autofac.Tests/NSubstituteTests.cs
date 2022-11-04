@@ -1,47 +1,13 @@
-using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using Testing.Autofac.NSubstitute;
+using Testing.Autofac.Tests.CodeBase;
 
 namespace Testing.Autofac.Tests;
 
 [TestClass]
 public sealed class NSubstituteTests
 {
-    public interface IFoo
-    {
-        int Add(int a);
-    }
-
-    public interface IBar
-    {
-        int Value();
-    }
-
-    public class Foo : IFoo
-    {
-        private readonly IBar bar;
-
-        public Foo(IBar bar)
-        {
-            this.bar = bar;
-        }
-
-        public int Add(int a)
-        {
-            return a + bar.Value();
-        }
-    }
-
-    public class TestModule : Module
-    {
-        protected override void Load(ContainerBuilder builder)
-        {
-            builder.RegisterType<Foo>().As<IFoo>().InstancePerLifetimeScope();
-        }
-    }
-
-
     [TestMethod]
     public void BuildTest()
     {
@@ -65,7 +31,7 @@ public sealed class NSubstituteTests
     {
         // arrange
         new TestContainerBuilder()
-            .Module<TestModule>()
+            .Module(new TestModule())
             .Mock(out IBar bar)
             .Build()
             .Resolve(out IFoo underTest);
