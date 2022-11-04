@@ -15,7 +15,7 @@ https://www.nuget.org/packages/Testing.Autofac.Moq/
 1. Create TestContainerBuilder
 2. Register autofac modules
 3. Register mocks (NSubstitute or Moq)
-4. Build test services
+4. Resolve test services
 
 # Usage example (NSubstitute)
 
