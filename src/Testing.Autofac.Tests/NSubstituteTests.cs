@@ -33,7 +33,6 @@ public sealed class NSubstituteTests
         new TestContainerBuilder()
             .Module(new TestModule())
             .Mock<IBar>(x => x.Value().Returns(2))
-            .Build()
             .Resolve(out IFoo underTest);
 
         // act

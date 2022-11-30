@@ -34,16 +34,13 @@ public sealed class TestContainerBuilder
         return scope.Resolve<T>();
     }
 
-    public void Resolve<T>(out T target)
+    public TestContainerScope Resolve<T>(out T target)
         where T : notnull
-    {
-        target = Resolve<T>();
-    }
-
-    public TestContainerScope Build()
     {
         var container = ContainerBuilder.Build();
         var scope = container.BeginLifetimeScope();
-        return new TestContainerScope(scope);
+        var testContainerScope = new TestContainerScope(scope);
+        testContainerScope.Resolve<T>(out target);
+        return testContainerScope;
     }
 }

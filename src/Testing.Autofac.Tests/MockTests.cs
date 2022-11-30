@@ -33,7 +33,6 @@ public sealed class MockTests
         new TestContainerBuilder()
             .Module(new TestModule())
             .Mock<IBar>(x => x.Setup(x => x.Value()).Returns(2))
-            .Build()
             .Resolve(out IFoo underTest);
 
         // act
