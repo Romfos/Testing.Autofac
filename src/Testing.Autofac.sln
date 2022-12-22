@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".editor", ".editor", "{7784DB53-C5A9-470D-A633-54656EE2406B}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing.Autofac", "Testing.Autofac\Testing.Autofac.csproj", "{74DA2EDD-26E6-4684-870C-1F40D0F5760C}"
@@ -14,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing.Autofac.NSubstitute
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing.Autofac.Tests", "Testing.Autofac.Tests\Testing.Autofac.Tests.csproj", "{7DFD54AD-EF72-40DD-BFA7-F91B00BC8B11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.Autofac.Moq", "Testing.Autofac.Moq\Testing.Autofac.Moq.csproj", "{5DA31FBE-21F2-4490-91C3-40F2A6558031}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing.Autofac.Moq", "Testing.Autofac.Moq\Testing.Autofac.Moq.csproj", "{5DA31FBE-21F2-4490-91C3-40F2A6558031}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,6 +12,7 @@
     <Description>Small testing library for autofac modules</Description>
     <PackageTags>Tests Testing UnitTests Autofac Moq</PackageTags>
     <RepositoryUrl>https://github.com/Romfos/Testing.Autofac</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +21,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Testing.Autofac\Testing.Autofac.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\">
+      <Visible>false</Visible>
+    </None>
   </ItemGroup>
 
 </Project>
