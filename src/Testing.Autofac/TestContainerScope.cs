@@ -2,14 +2,9 @@ using Autofac;
 
 namespace Testing.Autofac;
 
-public sealed class TestContainerScope
+public sealed class TestContainerScope(ILifetimeScope lifetimeScope)
 {
-    internal ILifetimeScope LifetimeScope { get; }
-
-    public TestContainerScope(ILifetimeScope lifetimeScope)
-    {
-        LifetimeScope = lifetimeScope;
-    }
+    internal ILifetimeScope LifetimeScope { get; } = lifetimeScope;
 
     public TestContainerScope Resolve<T>(out T value)
         where T : notnull
