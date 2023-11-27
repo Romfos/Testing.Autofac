@@ -3,7 +3,8 @@
 Small testing library for autofac modules
 
 [![.github/workflows/verify.yml](https://github.com/Romfos/Testing.Autofac/actions/workflows/verify.yml/badge.svg)](https://github.com/Romfos/Testing.Autofac/actions/workflows/verify.yml)
-[![Testing.Autofac.NSubstitute](https://img.shields.io/nuget/v/Testing.Autofac.NSubstitute?label=Testing.Autofac.NSubstitute)](https://www.nuget.org/packages/Testing.Autofac.NSubstitute)
+
+[![Testing.Autofac.NSubstitute](https://img.shields.io/nuget/v/Testing.Autofac.NSubstitute?label=Testing.Autofac.NSubstitute)](https://www.nuget.org/packages/Testing.Autofac.NSubstitute)\
 [![Testing.Autofac.Moq](https://img.shields.io/nuget/v/Testing.Autofac.Moq?label=Testing.Autofac.Moq)](https://www.nuget.org/packages/Testing.Autofac.Moq)
 
 # Nuget
