@@ -1,6 +1,5 @@
 using Autofac;
 using Moq;
-using System;
 
 namespace Testing.Autofac.Moq;
 

@@ -1,6 +1,5 @@
 using Autofac;
 using NSubstitute;
-using System;
 
 namespace Testing.Autofac.NSubstitute;
 
