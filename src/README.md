@@ -4,11 +4,7 @@ Small testing library for autofac modules
 
 # Nuget
 
-NSubstitute:
 https://www.nuget.org/packages/Testing.Autofac.NSubstitute/
-
-Moq:
-https://www.nuget.org/packages/Testing.Autofac.Moq/
 
 # Usage
 
