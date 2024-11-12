@@ -12,15 +12,17 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: |
+            8.0.x
+            9.0.x
 
       - name: Pack nuget package
-        run: dotnet pack ./src/Testing.Autofac.sln -c Release -p:Version=${{ inputs.Version }} -o "./build"
+        run: dotnet pack ./src/Testing.Autofac.sln -p:Version=${{ inputs.Version }} -o "./build"
 
       - name: Push to nuget
         run: dotnet nuget push .\build\*.nupkg -k ${{ secrets.NUGET }} -s https://api.nuget.org/v3/index.json
